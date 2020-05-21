@@ -1,12 +1,9 @@
 import React from 'react';
 import { Switch } from 'react-router-dom';
-// eslint-disable-next-line import/no-named-as-default-member
 import Route from './Route';
-
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
-
-import DashBoard from '../pages/Dashboard';
+import Dashboard from '../pages/Dashboard';
 import Profile from '../pages/Profile';
 
 export default function Routes() {
@@ -14,8 +11,9 @@ export default function Routes() {
     <Switch>
       <Route path="/" exact component={SignIn} />
       <Route path="/register" component={SignUp} />
-      <Route path="/dashboard" component={DashBoard} />
-      <Route path="/profile" component={Profile} />
+
+      <Route path="/dashboard" component={Dashboard} isPrivate />
+      <Route path="/profile" component={Profile} isPrivate />
     </Switch>
   );
 }
